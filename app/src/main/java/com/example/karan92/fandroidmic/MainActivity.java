@@ -10,12 +10,16 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
         getSupportActionBar().hide();
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, new MainFragment())
+                    .replace(R.id.container, new SplashFragment())
                     .commit();
         }
     }
