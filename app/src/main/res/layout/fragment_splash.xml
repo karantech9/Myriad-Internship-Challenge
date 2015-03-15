@@ -1,7 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#D0D0D0"
+    android:background="#99D0D0D0"
     tools:context="com.example.karan92.fandroidmic.SplashFragment">
 <RelativeLayout
     android:layout_width="fill_parent"

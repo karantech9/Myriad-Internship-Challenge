@@ -2,6 +2,7 @@ package com.example.karan92.fandroidmic;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -45,10 +46,20 @@ public class SplashFragment extends Fragment {
             } catch (Exception e) {
                 Log.e(TAG, e.getMessage());
             }
+            SharedPreferences signUp = getActivity().getSharedPreferences("registrationInfo",1);
+            SharedPreferences.Editor editor = signUp.edit();
+            String email = signUp.getString("Email","");
+            if(!email.isEmpty()){
+                Intent showKingdomsIntent = new Intent(getActivity(), KingdomActivity.class);
+                startActivity(showKingdomsIntent);
+                getActivity().finish();
+                return;
+            }
 
             Intent i = new Intent(getActivity(),SignUpActivity.class);
             startActivity(i);
             getActivity().finish();
+
         }
     }
 
