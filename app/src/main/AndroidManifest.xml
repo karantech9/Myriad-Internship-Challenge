@@ -25,9 +25,13 @@
             android:label="@string/title_activity_sign_up" >
         </activity>
         <activity
-            android:theme="@style/AppTheme2"
             android:name=".KingdomActivity"
-            android:label="@string/title_activity_kingdom" >
+            android:label="@string/title_activity_kingdom"
+            android:theme="@style/AppTheme2" >
+        </activity>
+        <activity
+            android:name=".KingdomViewPagerActtivity"
+            android:label="@string/title_activity_kingdom_view_pager_acttivity" >
         </activity>
     </application>
 

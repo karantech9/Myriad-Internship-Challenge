@@ -7,5 +7,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
     <string name="title_activity_kingdom">KingdomActivity</string>
+    <string name="title_activity_kingdom_view_pager_acttivity">KingdomViewPagerActtivity</string>
 
 </resources>

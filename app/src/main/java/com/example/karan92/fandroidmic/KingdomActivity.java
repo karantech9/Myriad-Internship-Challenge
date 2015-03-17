@@ -19,7 +19,7 @@ import android.widget.Toast;
 import java.util.List;
 
 
-public class KingdomActivity extends ActionBarActivity {
+public class KingdomActivity extends ActionBarActivity  {
 
     private Toolbar mToolbar;
 
@@ -113,7 +113,7 @@ public class KingdomActivity extends ActionBarActivity {
             mLayoutManager = new LinearLayoutManager(getActivity());
             mRecyclerView.setLayoutManager(mLayoutManager);
 
-            //Calling AsyncTask
+              //Calling AsyncTask
             KingdomBackgroundTask mKingdomBackgroundTask = new KingdomBackgroundTask(getActivity(),mRecyclerView);
             mKingdomBackgroundTask.execute((Void)null);
 

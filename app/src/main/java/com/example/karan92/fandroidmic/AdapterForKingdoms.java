@@ -30,7 +30,7 @@ public class AdapterForKingdoms extends RecyclerView.Adapter<AdapterForKingdoms.
         public void onItemClick(View view, int position);
     }
 
-    public void SetOnItemClickListner(final OnItemClickListner mItemClickListener)
+    public void SetOnItemClickListener(OnItemClickListner mItemClickListener)
     {
         this.mItemClickListener = mItemClickListener;
     }

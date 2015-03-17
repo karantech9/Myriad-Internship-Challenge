@@ -1,8 +1,10 @@
 package com.example.karan92.fandroidmic;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.List;
@@ -47,6 +49,14 @@ public class KingdomBackgroundTask extends AsyncTask<Void,Void,Boolean> {
                 //setting up adapter
                 mAdapterForKingdoms = new AdapterForKingdoms(activity,kingdoms);
                 mRecyclerView.setAdapter(mAdapterForKingdoms);
+                mAdapterForKingdoms.SetOnItemClickListener(new AdapterForKingdoms.OnItemClickListner() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        Intent i = new Intent(activity,KingdomViewPagerActtivity.class);
+                        activity.startActivity(i);
+
+                    }
+                });
         }
         else
         {
@@ -54,4 +64,5 @@ public class KingdomBackgroundTask extends AsyncTask<Void,Void,Boolean> {
         }
 
     }
+
 }
