@@ -1,0 +1,25 @@
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="3dp">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/button_material_light"
+        android:gravity="center_horizontal"
+        android:minHeight="?attr/actionBarSize">
+    </android.support.v7.widget.Toolbar>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
+    android:layout_below="@+id/toolbar"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context="com.example.karan92.fandroidmic.KingdomActivity">
+
+
+    </FrameLayout>
+
+</RelativeLayout>
