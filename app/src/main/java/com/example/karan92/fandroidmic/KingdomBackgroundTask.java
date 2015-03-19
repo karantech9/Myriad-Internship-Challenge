@@ -20,6 +20,7 @@ public class KingdomBackgroundTask extends AsyncTask<Void,Void,Boolean> {
     AdapterForKingdoms mAdapterForKingdoms;
     Activity activity;
     RecyclerView mRecyclerView;
+    Kingdoms kingdom;
 
     KingdomBackgroundTask(Activity activity, RecyclerView mRecyclerView){
         this.activity = activity;
@@ -35,12 +36,13 @@ public class KingdomBackgroundTask extends AsyncTask<Void,Void,Boolean> {
 
             RetrofitService service = restAdapter.create(RetrofitService.class);
             kingdoms = service.getKingdoms();
+
             if(kingdoms.isEmpty()) throw new Exception();
         } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
-        return true;
+       return true;
     }
 
     @Override
@@ -52,7 +54,9 @@ public class KingdomBackgroundTask extends AsyncTask<Void,Void,Boolean> {
                 mAdapterForKingdoms.SetOnItemClickListener(new AdapterForKingdoms.OnItemClickListner() {
                     @Override
                     public void onItemClick(View view, int position) {
+                        String kingdomID = kingdoms.get(position).getId();
                         Intent i = new Intent(activity,KingdomViewPagerActtivity.class);
+                        i.putExtra("kingdomID", kingdomID);
                         activity.startActivity(i);
 
                     }

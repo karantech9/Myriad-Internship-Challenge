@@ -28,7 +28,7 @@ public class KingdomActivity extends ActionBarActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kingdom);
-
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
         //setting up toolbar
         mToolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);

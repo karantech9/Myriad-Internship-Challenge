@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/primary_material_light"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/questName"
+        android:textColor="#006161"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:text="Name of Quest"/>
+
+    <View
+        android:layout_below="@+id/questName"
+        android:id="@+id/hLine"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#444"/>
+
+    <TextView
+        android:layout_below="@+id/hLine"
+        android:id="@+id/questNameDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:text="Description of Quest"/>
+
+    <TextView
+        android:layout_below="@+id/questNameDesc"
+        android:id="@+id/questNameGiver"
+        android:textColor="#006161"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:text="Name of Quest Giver"/>
+
+    <View
+        android:layout_below="@+id/questNameGiver"
+        android:id="@+id/hLine2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#444"/>
+
+    <TextView
+        android:layout_below="@+id/hLine2"
+        android:id="@+id/questNameGiverDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:text="Description of Quest Giver"/>
+
+
+
+    <ImageView
+        android:id="@+id/questImg"
+        android:layout_below="@id/questNameGiverDesc"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/background"/>
+
+
+</RelativeLayout>

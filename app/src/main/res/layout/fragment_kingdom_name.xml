@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/primary_material_light"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/kingdomImg"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/background"/>
+
+    <TextView
+        android:layout_below="@+id/kingdomImg"
+        android:id="@+id/kingdomTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textColor="#006161"
+        android:text="Kingdom Title"/>
+
+    <View
+        android:layout_below="@+id/kingdomTitle"
+        android:id="@+id/hLine"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#444"/>
+
+    <TextView
+        android:layout_below="@+id/hLine"
+        android:id="@+id/kingdomClimate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:text="Title : "/>
+
+
+    <TextView
+        android:layout_below="@+id/hLine"
+        android:layout_toRightOf="@+id/kingdomClimate"
+        android:id="@+id/kingdomClimateR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:text="Kingdom Title"/>
+
+    <TextView
+        android:layout_below="@+id/kingdomClimate"
+        android:id="@+id/kingdomPopulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:text="Population : "/>
+
+
+    <TextView
+        android:layout_below="@+id/kingdomClimate"
+        android:layout_toRightOf="@+id/kingdomPopulation"
+        android:id="@+id/kingdomPopulationR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:text="Kingdom Population"/>
+
+    <TextView
+        android:layout_below="@+id/kingdomPopulation"
+        android:id="@+id/kingdomLang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:text="Language : "/>
+
+
+    <TextView
+        android:layout_below="@+id/kingdomPopulation"
+        android:layout_toRightOf="@+id/kingdomLang"
+        android:id="@+id/kingdomLangR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:text="Kingdom Lang"/>
+
+
+</RelativeLayout>

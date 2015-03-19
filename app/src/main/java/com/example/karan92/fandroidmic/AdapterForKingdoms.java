@@ -78,6 +78,7 @@ public class AdapterForKingdoms extends RecyclerView.Adapter<AdapterForKingdoms.
 
         public void bindMovieData(Kingdoms kingdom)
         {
+
             kingdomTitle.setText(kingdom.getName());
             Picasso.with(kingdomImage.getContext())
                     .load(kingdom.getImage())
