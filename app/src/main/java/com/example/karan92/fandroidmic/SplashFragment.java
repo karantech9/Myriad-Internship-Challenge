@@ -46,6 +46,9 @@ public class SplashFragment extends Fragment {
             } catch (Exception e) {
                 Log.e(TAG, e.getMessage());
             }
+
+            //check whether user is signed up or not
+
             SharedPreferences signUp = getActivity().getSharedPreferences("registrationInfo",1);
             SharedPreferences.Editor editor = signUp.edit();
             String email = signUp.getString("Email","");

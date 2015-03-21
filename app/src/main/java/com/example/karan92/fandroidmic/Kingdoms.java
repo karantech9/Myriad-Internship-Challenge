@@ -17,7 +17,7 @@ public class Kingdoms {
     public static class Quest{
         public String id;
         public String name;
-        public String description;
+        public static String description;
         public String image;
         public Giver giver;
     }

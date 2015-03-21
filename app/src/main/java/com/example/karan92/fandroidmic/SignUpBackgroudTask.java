@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import retrofit.RestAdapter;
@@ -11,9 +12,10 @@ import retrofit.RestAdapter;
 /**
  * Created by Karan92 on 3/15/2015.
  */
-public class SignUpBackgroudTask extends AsyncTask<String, Void, Boolean> {
+public class SignUpBackgroudTask extends AsyncTask<String, Integer, Boolean> {
 
     Activity mActivity;
+    ProgressBar bar;
 
     SignUpBackgroudTask (Activity activity) {
         super();
@@ -60,13 +62,15 @@ public class SignUpBackgroudTask extends AsyncTask<String, Void, Boolean> {
     protected void onPostExecute(final Boolean success) {
 
         if (success) {
+
+            //Sign up & go to next activity
             Toast.makeText(mActivity, "Bravo! Signed Up!", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(mActivity, KingdomActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mActivity.startActivity(i);
             this.mActivity.finish();
         } else {
-            System.out.println("UnSuccess");
+            Toast.makeText(mActivity, "Network Error!", Toast.LENGTH_SHORT).show();
         }
     }
 

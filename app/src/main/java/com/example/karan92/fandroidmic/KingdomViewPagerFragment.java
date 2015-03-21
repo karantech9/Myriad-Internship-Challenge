@@ -54,11 +54,17 @@ public class KingdomViewPagerFragment extends Fragment {
         mKingdomTitle.setText(getArguments().getString("kingdomName"));
         mKingdomClimate.setText(getArguments().getString("kingdomClimate"));
         mKingdomPopulation.setText(getArguments().getString("kingdomPopulation"));
-        mKingdomLanguage.setText(getArguments().getString("kingdomLanguage"));
+        if(getArguments().getString("kingdomLanguage")==null) {
+            mKingdomLanguage.setText("Language is Not Provided");
+        }
+        else{
+            mKingdomLanguage.setText(getArguments().getString("kingdomLanguage"));
+        }
+
 
         Picasso.with(mKingdomImage.getContext())
                 .load(getArguments().getString("kingdomImage"))
-                .placeholder(R.drawable.progress_animation)
+                .placeholder(R.drawable.progress)
                 .into(mKingdomImage);
 
         return rootView;

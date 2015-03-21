@@ -80,9 +80,10 @@ public class AdapterForKingdoms extends RecyclerView.Adapter<AdapterForKingdoms.
         {
 
             kingdomTitle.setText(kingdom.getName());
+            kingdomTitle.bringToFront();
             Picasso.with(kingdomImage.getContext())
                     .load(kingdom.getImage())
-                    .placeholder(R.drawable.progress_animation)
+                    .placeholder(R.drawable.progress)
                     .into(kingdomImage);
         }
     }

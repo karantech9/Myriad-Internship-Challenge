@@ -24,6 +24,4 @@ public interface RetrofitService {
     @GET("/api/v1/kingdoms/{id}")
     Kingdoms getQuests(@Path("id") String kingdomID);
 
-
-
 }

@@ -14,9 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import java.util.List;
 
 
 public class KingdomActivity extends ActionBarActivity  {
@@ -29,6 +28,7 @@ public class KingdomActivity extends ActionBarActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kingdom);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+
         //setting up toolbar
         mToolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
@@ -50,7 +50,8 @@ public class KingdomActivity extends ActionBarActivity  {
                         editor.commit();
                         Toast.makeText(getApplication(), "Logout Successful",Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(getApplication(), SignUpActivity.class);
-                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(i);
 
                         return false;
@@ -61,6 +62,7 @@ public class KingdomActivity extends ActionBarActivity  {
 
             }
         });
+
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -96,10 +98,9 @@ public class KingdomActivity extends ActionBarActivity  {
      * A placeholder fragment containing a simple view.
      */
     public static class PlaceholderFragment extends Fragment {
-        AdapterForKingdoms mAdapterForKingdoms;
         RecyclerView mRecyclerView;
         RecyclerView.LayoutManager mLayoutManager;
-        List<Kingdoms> kingdoms = null;
+        private ProgressBar mProgressBar;
 
         public PlaceholderFragment() {
         }
@@ -112,10 +113,12 @@ public class KingdomActivity extends ActionBarActivity  {
             mRecyclerView.setHasFixedSize(true);
             mLayoutManager = new LinearLayoutManager(getActivity());
             mRecyclerView.setLayoutManager(mLayoutManager);
+            mProgressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
 
               //Calling AsyncTask
-            KingdomBackgroundTask mKingdomBackgroundTask = new KingdomBackgroundTask(getActivity(),mRecyclerView);
-            mKingdomBackgroundTask.execute((Void)null);
+            KingdomBackgroundTask mKingdomBackgroundTask = new KingdomBackgroundTask(getActivity(),mRecyclerView,mProgressBar);
+            mKingdomBackgroundTask.execute();
+            mProgressBar.setVisibility(View.VISIBLE);
 
             return rootView;
         }

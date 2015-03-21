@@ -8,7 +8,7 @@
     <!-- To retrieve the account name (email) as part of sign-in: -->
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:theme="@style/Theme.AppCompat.Light" >
         <activity
@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:theme="@style/AppTheme2"
             android:name=".SignUpActivity"
             android:label="@string/title_activity_sign_up" >
         </activity>
@@ -31,7 +32,8 @@
         </activity>
         <activity
             android:name=".KingdomViewPagerActtivity"
-            android:label="@string/title_activity_kingdom_view_pager_acttivity" >
+            android:label="@string/title_activity_kingdom_view_pager_acttivity"
+            android:theme="@style/AppTheme2" >
         </activity>
     </application>
 

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@color/primary_material_light"
-    android:layout_height="match_parent">
+
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@color/background_material_dark"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/kingdomImg"
@@ -20,9 +30,10 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:textColor="#006161"
+        android:textStyle="bold|italic"
+        android:fontFamily="sans-serif-light"
+        android:textSize="25dp"
+        android:textColor="@color/background_material_light"
         android:text="Kingdom Title"/>
 
     <View
@@ -34,16 +45,18 @@
         android:layout_marginBottom="10dp"
         android:layout_width="fill_parent"
         android:layout_height="2dp"
-        android:background="#444"/>
+        android:background="@color/background_material_light"/>
 
     <TextView
         android:layout_below="@+id/hLine"
         android:id="@+id/kingdomClimate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="italic"
         android:layout_marginLeft="10dp"
+        android:textColor="@color/background_material_light"
         android:layout_marginBottom="10dp"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:text="Title : "/>
 
 
@@ -53,9 +66,12 @@
         android:id="@+id/kingdomClimateR"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="italic"
+        android:textColor="@color/background_material_light"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:text="Kingdom Title"/>
 
     <TextView
@@ -63,9 +79,11 @@
         android:id="@+id/kingdomPopulation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/background_material_light"
+        android:textStyle="italic"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="10dp"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:text="Population : "/>
 
 
@@ -75,19 +93,24 @@
         android:id="@+id/kingdomPopulationR"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="italic"
+        android:textColor="@color/background_material_light"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:text="Kingdom Population"/>
 
     <TextView
         android:layout_below="@+id/kingdomPopulation"
         android:id="@+id/kingdomLang"
         android:layout_width="wrap_content"
+        android:textColor="@color/background_material_light"
         android:layout_height="wrap_content"
+        android:textStyle="italic"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="10dp"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:text="Language : "/>
 
 
@@ -95,12 +118,17 @@
         android:layout_below="@+id/kingdomPopulation"
         android:layout_toRightOf="@+id/kingdomLang"
         android:id="@+id/kingdomLangR"
+        android:textColor="@color/background_material_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:textStyle="italic"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:text="Kingdom Lang"/>
+        </RelativeLayout>
+  </LinearLayout>
 
+</ScrollView>
 
-</RelativeLayout>

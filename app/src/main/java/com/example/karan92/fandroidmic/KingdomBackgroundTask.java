@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.List;
@@ -14,17 +15,19 @@ import retrofit.RestAdapter;
 /**
  * Created by Karan92 on 3/16/2015.
  */
-public class KingdomBackgroundTask extends AsyncTask<Void,Void,Boolean> {
+public class KingdomBackgroundTask extends AsyncTask<Void,Integer,Boolean> {
 
     List<Kingdoms> kingdoms;
     AdapterForKingdoms mAdapterForKingdoms;
     Activity activity;
     RecyclerView mRecyclerView;
-    Kingdoms kingdom;
+    ProgressBar mProgressBar;
 
-    KingdomBackgroundTask(Activity activity, RecyclerView mRecyclerView){
+    KingdomBackgroundTask(Activity activity, RecyclerView mRecyclerView, ProgressBar mProgressBar){
         this.activity = activity;
         this.mRecyclerView = mRecyclerView;
+        this.mProgressBar = mProgressBar;
+
     }
 
     @Override
@@ -48,15 +51,21 @@ public class KingdomBackgroundTask extends AsyncTask<Void,Void,Boolean> {
     @Override
     protected void onPostExecute(final Boolean result){
         if(result){
+
                 //setting up adapter
+                mProgressBar.setVisibility(View.INVISIBLE);
                 mAdapterForKingdoms = new AdapterForKingdoms(activity,kingdoms);
                 mRecyclerView.setAdapter(mAdapterForKingdoms);
+
+
+                //on click view pager activity loads
                 mAdapterForKingdoms.SetOnItemClickListener(new AdapterForKingdoms.OnItemClickListner() {
                     @Override
                     public void onItemClick(View view, int position) {
                         String kingdomID = kingdoms.get(position).getId();
-                        Intent i = new Intent(activity,KingdomViewPagerActtivity.class);
+                        Intent i = new Intent(activity, KingdomViewPagerActtivity.class);
                         i.putExtra("kingdomID", kingdomID);
+                        i.putExtra("kingdomName", kingdoms.get(position).getName());
                         activity.startActivity(i);
 
                     }

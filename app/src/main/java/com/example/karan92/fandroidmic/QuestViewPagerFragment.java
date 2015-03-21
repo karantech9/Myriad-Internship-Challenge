@@ -58,12 +58,23 @@ public class QuestViewPagerFragment extends Fragment {
 
 
         mQuestTitle.setText(getArguments().getString("questName"));
-        mQuestDescription.setText(getArguments().getString("questDescription"));
+        if(getArguments().getString("questDescription")==null) {
+            mQuestDescription.setText("Quest Description is Not Provided");
+        }
+        else{
+            mQuestGiverDescription.setText(getArguments().getString("questDescription"));
+        }
         mQuestGiverTitle.setText(getArguments().getString("questGiverName"));
-        mQuestGiverDescription.setText(getArguments().getString("questGiverDescription"));
+        if(getArguments().getString("questGiverDescription")==null) {
+            mQuestGiverDescription.setText("Quest Giver Description is Not Provided");
+        }
+        else{
+            mQuestGiverDescription.setText(getArguments().getString("questGiverDescription"));
+        }
+
         Picasso.with(mQuestImage.getContext())
                 .load(getArguments().getString("questGiverImage"))
-                .placeholder(R.drawable.progress_animation)
+                .placeholder(R.drawable.progress)
                 .into(mQuestImage);
 
         return rootView;
